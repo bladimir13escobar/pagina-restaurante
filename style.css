@@ -1,4 +1,4 @@
-:root{
+:root {
     --main-c: #ffc300;
     --black-c: #000;
 }
@@ -6,90 +6,103 @@
 /* Estilos generales */
 
 * {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+a:visited {
+    color: inherit
+}
+
+li {
     list-style: none;
 }
 
-p{
+p {
     font-size: 1.1rem;
 }
 
-h1{
+h1 {
     font-size: 2.4rem;
 }
-h2{
+
+h2 {
     font-size: 2rem;
 }
-h3{
+
+h3 {
     font-size: 1.8rem;
 }
-h4{
+
+h4 {
     font-size: 1.6rem;
 }
-h5{
+
+h5 {
     font-size: 1.4rem;
 }
-h6{
+
+h6 {
     font-size: 1.2rem;
 }
 
-/*hero*/
-.hero{
-    background: url(img/restaurante.jpg) center;
-    background-size: cover;
-    height: 100vh;
+.cta-main {
+    background-color: var(--main-c);
+    padding: 1rem 1rem;
+    color: #fff;
+    font-size: bold;
+    border-radius: 2px;
 }
 
 /* Menu Header Restaurante */
-header.main-header{
-    position: fixed;
+header.main-header {
+    position: relative;
     top: 0;
     width: 100%;
     z-index: 9999;
 }
 
-.header-wrap{
+.header-wrap {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
     background-color: #fff;
     z-index: 999;
-    /* background-color: transparent; */
+    background-color: transparent;
 }
 
-.wrap-logo-header{
+.wrap-logo-header {
     display: flex;
     align-items: center;
     flex-basis: 15%;
 }
 
-.logo-header{
+.logo-header {
     font-weight: bold;
     font-size: 1.2rem;
     color: #222;
 }
 
-.nav-header{
+/* menu-heart */
+
+.nav-header {
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-.wrap-nav-header{
+.wrap-nav-header {
     display: flex;
     flex-basis: 50%;
 }
 
-ul.main-menu{
+ul.main-menu {
     display: flex;
     width: 100%;
     z-index: 99;
@@ -99,7 +112,7 @@ ul.main-menu{
     font-size: 1.1rem;
 }
 
-ul.main-menu #nav-main-contact{
+ul.main-menu #nav-main-contact {
     display: flex;
     align-items: center;
     padding: .5rem 1rem;
@@ -107,47 +120,54 @@ ul.main-menu #nav-main-contact{
     color: #fff;
 }
 
-li.menu-item{
+li.menu-item {
     margin: .75rem;
     display: flex;
 }
 
-li.menu-item a{
+li.menu-item a {
     padding: .5rem 1rem;
-    color: #222
-
+    color: #fff;
 }
 
-li.menu-item a:hover{
+li.menu-item a:hover {
     color: var(--main-c)
 }
 
-i.toggle-menu{
+i.toggle-menu {
     display: none;
     background-color: #fff;
-    border:none;
+    border: none;
     z-index: 9999;
 }
 
-i.toggle-menu img{
+i.toggle-menu img {
     width: 27px;
     z-index: 99;
 }
 
-input#check{
+input#check {
     display: none;
 }
 
-@media (min-width:880px){
-    .header-wrap{
+@media (min-width:880px) {
+    .header-wrap {
         padding: .5rem 5rem;
     }
 }
-@media (max-width: 768px){
-    header{
+
+@media (min-width:768px) {
+    a.logo-header {
+        color: #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
         margin-bottom: 4rem;
     }
-    .header-wrap{
+
+    .header-wrap {
         position: fixed;
         width: 100%;
         background-color: #fff;
@@ -156,33 +176,46 @@ input#check{
         z-index: 9999;
         height: 60px;
     }
-    .wrap-logo-header{
+
+    .wrap-logo-header {
         position: fixed;
         z-index: 999;
         top: 3%;
         left: 3%;
-      }
-    i.toggle-menu{
+    }
+
+    .logo-header,
+    li.menu-item a {
+        color: #222;
+    }
+
+    i.toggle-menu {
         display: flex;
     }
-    
-    ul.main-menu,#nav-main-contact{
+
+    ul.main-menu,
+    #nav-main-contact {
         display: none;
         left: 0;
         margin: 0;
         padding: 0;
     }
-    ul.main-menu{
+
+    ul.main-menu {
         position: fixed;
         background-color: #fff;
     }
-    label.checkbtn{
+
+    label.checkbtn {
         position: fixed;
         right: 3%;
         top: 3%;
         z-index: 9999;
+        cursor: pointer;
     }
-    #check:checked ~ ul{
+
+    /* cuando el check esta marcado seleccion a la lista  */
+    #check:checked~ul {
         display: flex;
         z-index: 9;
         flex-flow: column;
@@ -192,4 +225,30 @@ input#check{
         top: 0;
         font-size: 2rem;
     }
+}
+
+/*hero section homePage*/
+.wrap-header-hero {
+    background: linear-gradient(to bottom, rgb(0 0 0 / .75), rgb(0 0 0 / .50)), url(img/restaurante.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+}
+
+.hero-home-page {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-hero-home-page {
+    color: #fff;
+    text-align: center;
+    width: 50%;
+}
+
+.wrap-hero-home-page p {
+    margin-bottom: 2rem;
 }
