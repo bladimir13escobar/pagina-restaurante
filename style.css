@@ -367,3 +367,18 @@ hr{
  
 }
 
+/* Galeria de imangenes */
+
+.imagen-galeria, .imagen-galeria img{
+    max-width: 275px;
+    border-radius: 4px;
+
+}
+
+@media (max-width:880px){
+    .galeria-platos{
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+    }
+  }
