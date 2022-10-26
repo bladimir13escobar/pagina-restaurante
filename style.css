@@ -319,3 +319,51 @@ input#check {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+/* Menu restaurante */
+.column-3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.menu-restaurante{
+    color: #fff;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    padding: 5px;
+}
+
+hr{
+    background: var(--main-c);
+    height: 2px;
+    width: 30px;
+    border: none;
+    margin: 14px;
+  }
+
+.precio-menu{
+    font-weight: bold;
+}
+.precio-menu span{
+    font-size: 2rem;
+}
+
+@media (max-width:880px){
+    .column-3{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:640px){
+    .column-3{
+        grid-template-columns: repeat(1, 1fr);
+    }
+ 
+}
+
